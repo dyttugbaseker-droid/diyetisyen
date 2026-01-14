@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diyetisyen Tuğba Şeker Ağaç | Danışan Yorumları</title>
+    <title>Danışan Yorumları | Diyetisyen Tuğba Şeker Ağaç</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
     <style>
@@ -27,8 +27,7 @@
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: var(--dark);
-            background-color: #f8f9fa;
-            padding-top: 70px; /* Header için boşluk */
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4 {
@@ -38,6 +37,7 @@
         }
 
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
@@ -106,41 +106,6 @@
             cursor: pointer;
         }
 
-        /* Mobile Menu */
-        .mobile-nav {
-            display: none;
-        }
-
-        .mobile-nav.active {
-            display: block;
-            position: fixed;
-            top: 70px;
-            left: 0;
-            width: 100%;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            z-index: 999;
-        }
-
-        .mobile-nav ul {
-            list-style: none;
-        }
-
-        .mobile-nav ul li {
-            margin-bottom: 15px;
-        }
-
-        .mobile-nav ul li a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            font-size: 1rem;
-            display: block;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--light-gray);
-        }
-
         /* Fixed Buttons */
         .fixed-buttons {
             position: fixed;
@@ -178,465 +143,452 @@
             transform: scale(1.1);
         }
 
-        /* Testimonials Section */
-        .testimonials-section {
-            padding: 80px 0;
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(rgba(76, 175, 80, 0.9), rgba(76, 175, 80, 0.8));
+            color: white;
+            padding: 150px 0 80px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .page-hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        /* Section Common */
+        section {
+            padding: 60px 0;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .section-title h2 {
-            font-size: 2.8rem;
+            font-size: 2rem;
             color: var(--primary);
             position: relative;
             display: inline-block;
-            padding-bottom: 15px;
+            padding: 0 20px;
         }
 
         .section-title h2:after {
             content: '';
             position: absolute;
             width: 70%;
-            height: 4px;
+            height: 3px;
             background-color: var(--secondary);
-            bottom: 0;
+            bottom: -10px;
             left: 15%;
-            border-radius: 2px;
-        }
-
-        .section-title p {
-            color: var(--gray);
-            font-size: 1.2rem;
-            margin-top: 20px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
-
-        /* Google Reviews Header */
-        .google-header {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            margin-bottom: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .profile-info {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .profile-avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 4px solid var(--primary);
-            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.2);
-            background: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .profile-avatar i {
-            font-size: 3rem;
-            color: var(--primary);
-        }
-
-        .profile-details h3 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .profile-subtitle {
-            color: var(--gray);
-            font-size: 1.1rem;
-        }
-
-        .rating-summary {
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(255, 152, 0, 0.1));
-            border-radius: 15px;
-            min-width: 200px;
-        }
-
-        .rating-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            line-height: 1;
-        }
-
-        .rating-stars {
-            display: flex;
-            justify-content: center;
-            gap: 3px;
-            margin: 10px 0;
-        }
-
-        .star-large {
-            color: #FFC107;
-            font-size: 1.5rem;
-        }
-
-        .total-reviews {
-            color: var(--gray);
-            font-weight: 600;
         }
 
         /* Testimonials Grid */
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
 
-        /* Testimonial Card */
         .testimonial-card {
-            background: white;
-            border-radius: 20px;
-            padding: 35px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
-            border: 1px solid rgba(76, 175, 80, 0.1);
-            position: relative;
-            overflow: hidden;
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
+            transition: transform 0.3s;
         }
 
         .testimonial-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
-            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        .testimonial-card:before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 120px;
-            font-family: 'Playfair Display', serif;
-            color: rgba(76, 175, 80, 0.08);
-            line-height: 1;
-        }
-
-        /* Rating Stars */
-        .rating {
-            margin-bottom: 20px;
-            display: flex;
-            gap: 5px;
-        }
-
-        .star {
+        .client-rating {
             color: #FFC107;
-            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-size: 1rem;
         }
 
-        /* Testimonial Content */
-        .testimonial-content p {
-            color: var(--dark);
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 25px;
+        .testimonial-text {
+            margin-bottom: 20px;
             font-style: italic;
             position: relative;
-            z-index: 1;
+            padding-left: 20px;
         }
 
-        .read-more {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            margin-top: 10px;
+        .testimonial-text:before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--light-gray);
+            position: absolute;
+            left: -10px;
+            top: -15px;
+            font-family: serif;
         }
 
-        .read-more:hover {
-            text-decoration: underline;
-        }
-
-        /* Client Info */
         .client-info {
             display: flex;
             align-items: center;
-            gap: 15px;
-            padding-top: 20px;
-            border-top: 1px solid var(--light-gray);
+            margin-top: 15px;
         }
 
-        .client-avatar {
-            width: 60px;
-            height: 60px;
+        .client-img {
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             overflow: hidden;
-            border: 3px solid var(--primary);
-            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
-            background: #f0f0f0;
+            margin-right: 15px;
+            background-color: var(--light-gray);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--primary);
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+            flex-shrink: 0;
         }
 
-        .client-details {
-            flex: 1;
-        }
-
-        .client-name {
-            font-weight: 700;
-            color: var(--primary);
+        .client-details h4 {
             font-size: 1.1rem;
             margin-bottom: 5px;
         }
 
-        .client-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .client-date {
+        .client-details p {
             color: var(--gray);
             font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .client-source {
-            color: var(--gray);
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .client-source i {
-            color: var(--primary);
-        }
-
-        /* Google Verified */
-        .google-verified {
-            background: linear-gradient(135deg, #4285F4, #34A853);
-            color: white;
-            padding: 25px;
-            border-radius: 20px;
-            margin: 40px 0;
-            text-align: center;
-        }
-
-        .verified-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .verified-icon {
-            font-size: 3rem;
-            color: white;
-        }
-
-        .verified-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: white;
         }
 
         /* Success Stories */
         .success-stories {
-            margin-top: 60px;
-        }
-
-        .stories-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 40px;
+            background-color: var(--light-gray);
         }
 
         .stories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: 1fr;
             gap: 25px;
         }
 
         .story-card {
-            background: white;
-            border-radius: 15px;
+            background-color: white;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
-        }
-
-        .story-card:hover {
-            transform: translateY(-8px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .story-header {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            background-color: var(--primary);
             color: white;
-            padding: 25px;
+            padding: 20px;
             text-align: center;
         }
 
-        .story-client {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 10px;
+        .story-header h3 {
+            color: white;
+            margin-bottom: 5px;
         }
 
-        .story-duration {
-            font-size: 0.9rem;
-            opacity: 0.9;
+        .story-content {
+            padding: 25px;
         }
 
         .story-metrics {
-            padding: 25px;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            gap: 15px;
+            margin: 20px 0;
         }
 
-        .metric {
+        .metric-item {
             text-align: center;
+            padding: 15px 10px;
+            background-color: var(--light-gray);
+            border-radius: 8px;
         }
 
         .metric-value {
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 1.5rem;
+            font-weight: bold;
             color: var(--primary);
             display: block;
-            line-height: 1;
+            margin-bottom: 5px;
         }
 
         .metric-label {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--gray);
-            margin-top: 8px;
             line-height: 1.3;
         }
 
-        /* CTA Section */
-        .cta-section {
-            text-align: center;
-            margin-top: 70px;
-            padding: 50px;
-            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(255, 152, 0, 0.1));
-            border-radius: 25px;
+        /* Video Testimonials */
+        .video-testimonials {
+            background-color: white;
         }
 
-        .cta-title {
-            font-size: 2.2rem;
+        .videos-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .video-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-info {
+            padding: 20px;
+        }
+
+        .video-info h4 {
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
-        .cta-subtitle {
-            color: var(--gray);
+        /* Rating Summary */
+        .rating-summary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        .rating-score {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .rating-stars {
+            color: #FFC107;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .total-reviews {
             font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 30px;
-            line-height: 1.6;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
+            opacity: 0.9;
         }
 
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 35px;
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 30px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
             transition: all 0.3s;
             border: none;
             cursor: pointer;
-            gap: 10px;
-            min-width: 200px;
+            font-size: 1rem;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        .btn:hover {
+            background-color: #e68900;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
             color: white;
-            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+            padding: 50px 0 25px;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(76, 175, 80, 0.4);
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 30px;
         }
 
-        .btn-secondary {
-            background: white;
-            color: var(--primary);
-            border: 2px solid var(--primary);
+        .footer-column {
+            width: 100%;
         }
 
-        .btn-secondary:hover {
-            background: var(--primary);
+        .footer-column h3 {
             color: white;
-            transform: translateY(-5px);
-        }
-
-        .whatsapp-btn {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
-        }
-
-        .whatsapp-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
-        }
-
-        .phone-number {
-            margin-top: 30px;
+            margin-bottom: 15px;
             font-size: 1.2rem;
+        }
+
+        .footer-column p, .footer-column ul li {
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Mobile Menu */
+        .mobile-nav {
+            display: none;
+        }
+
+        .mobile-nav.active {
+            display: block;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 999;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+        }
+
+        .mobile-nav ul li {
+            margin-bottom: 15px;
+        }
+
+        .mobile-nav ul li a {
+            text-decoration: none;
             color: var(--dark);
+            font-weight: 500;
+            font-size: 1rem;
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--light-gray);
         }
 
-        .phone-number strong {
-            color: var(--primary);
-            font-size: 1.4rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1200px) {
+        /* Tablet Styles */
+        @media (min-width: 768px) {
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            nav ul li {
+                margin-left: 25px;
+            }
+            
+            nav ul li a {
+                font-size: 1rem;
+            }
+            
+            .page-hero {
+                padding: 150px 0 80px;
+            }
+            
+            .page-hero h1 {
+                font-size: 2.8rem;
+            }
+            
             .testimonials-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+            
+            .stories-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .story-metrics {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .videos-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .footer-content {
+                flex-direction: row;
+            }
+            
+            .footer-column {
+                flex: 1;
             }
         }
 
+        /* Desktop Styles */
+        @media (min-width: 992px) {
+            .logo h1 {
+                font-size: 1.7rem;
+            }
+            
+            nav ul li {
+                margin-left: 30px;
+            }
+            
+            .page-hero h1 {
+                font-size: 3.2rem;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .mobile-menu-btn {
+                display: none;
+            }
+            
+            .mobile-nav {
+                display: none !important;
+            }
+        }
+
+        /* Mobile Menu Button */
         @media (max-width: 991px) {
             nav ul {
                 display: none;
@@ -646,122 +598,20 @@
                 display: block;
             }
         }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 15px;
-            }
-            
-            .testimonials-section {
-                padding: 50px 0;
-            }
-            
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-            
-            .google-header {
-                flex-direction: column;
-                text-align: center;
-                padding: 25px;
-            }
-            
-            .profile-info {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-            
-            .testimonial-card {
-                padding: 25px;
-            }
-            
-            .verified-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .stories-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cta-section {
-                padding: 30px 20px;
-            }
-            
-            .cta-title {
-                font-size: 1.8rem;
-            }
-            
-            .btn-group {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-            
-            .client-meta {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            
-            .story-metrics {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .metric-value {
-                font-size: 1.8rem;
-            }
-            
-            .rating-number {
-                font-size: 2.8rem;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .testimonial-card {
-            animation: fadeInUp 0.6s ease forwards;
-            opacity: 0;
-        }
-
-        .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
-        .testimonial-card:nth-child(2) { animation-delay: 0.2s; }
-        .testimonial-card:nth-child(3) { animation-delay: 0.3s; }
-        .testimonial-card:nth-child(4) { animation-delay: 0.4s; }
-        .testimonial-card:nth-child(5) { animation-delay: 0.5s; }
-        .testimonial-card:nth-child(6) { animation-delay: 0.6s; }
-        .testimonial-card:nth-child(7) { animation-delay: 0.7s; }
-        .testimonial-card:nth-child(8) { animation-delay: 0.8s; }
     </style>
 </head>
 <body>
-    <!-- HEADER EKLENDİ -->
+    <!-- Sabit WhatsApp ve Arama Butonları -->
+    <div class="fixed-buttons">
+        <a href="https://wa.me/905070361859" class="whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:05070361859" class="call-btn">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
@@ -774,12 +624,12 @@
             
             <nav id="desktopNav">
                 <ul id="mainMenu">
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="hakkimizda.html">Hakkımda</a></li>
-                    <li><a href="hizmetlerimiz.html">Hizmetler</a></li>
-                    <li><a href="yorumlar.html" style="color: var(--primary);">Yorumlar</a></li>
-                    <li><a href="tarifler.html">Tarifler</a></li>
-                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li><a href="index">Ana Sayfa</a></li>
+                    <li><a href="hakkimizda">Hakkımda</a></li>
+                    <li><a href="hizmetler">Hizmetler</a></li>
+                    <li><a href="yorumlar">Yorumlar</a></li>
+                    <li><a href="tarifler">Tarifler</a></li>
+                    <li><a href="iletisim">İletişim</a></li>
                 </ul>
             </nav>
         </div>
@@ -787,425 +637,411 @@
         <!-- Mobile Navigation -->
         <div class="mobile-nav" id="mobileNav">
             <ul>
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="hakkimizda.html">Hakkımda</a></li>
-                <li><a href="hizmetlerimiz.html">Hizmetler</a></li>
-                <li><a href="yorumlar.html" style="color: var(--primary);">Yorumlar</a></li>
-                <li><a href="tarifler.html">Tarifler</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
+                <li><a href="index">Ana Sayfa</a></li>
+                <li><a href="hakkimizda">Hakkımda</a></li>
+                <li><a href="hizmetler">Hizmetler</a></li>
+                <li><a href="yorumlar">Yorumlar</a></li>
+                <li><a href="tarifler">Tarifler</a></li>
+                <li><a href="iletisim">İletişim</a></li>
             </ul>
         </div>
     </header>
 
-    <!-- Fixed Buttons -->
-    <div class="fixed-buttons">
-        <a href="https://wa.me/905070361859" class="whatsapp-btn" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="tel:05070361859" class="call-btn">
-            <i class="fas fa-phone"></i>
-        </a>
-    </div>
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Danışan Yorumları</h1>
+            <p>Gerçek başarı hikayeleri ve danışanlarımın deneyimleri</p>
+        </div>
+    </section>
 
-    <div class="container">
-        <section class="testimonials-section">
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
             <div class="section-title">
                 <h2>Danışan Yorumları</h2>
-                <p>Google'da 86 yorumla 5.0 puan alan diyetisyenimizin gerçek danışan yorumları</p>
             </div>
-
-            <!-- Google Header -->
-            <div class="google-header">
-                <div class="profile-info">
-                    <div class="profile-avatar">
-                        <i class="fas fa-user-md"></i>
-                    </div>
-                    <div class="profile-details">
-                        <h3>Diyetisyen Tuğba Şeker Ağaç</h3>
-                        <p class="profile-subtitle">Adana'da bir diyetisyen • 86 Yorum</p>
-                    </div>
-                </div>
-                <div class="rating-summary">
-                    <div class="rating-number">5.0</div>
-                    <div class="rating-stars">
-                        <i class="fas fa-star star-large"></i>
-                        <i class="fas fa-star star-large"></i>
-                        <i class="fas fa-star star-large"></i>
-                        <i class="fas fa-star star-large"></i>
-                        <i class="fas fa-star star-large"></i>
-                    </div>
-                    <div class="total-reviews">★★★★★ 86 Yorum</div>
-                </div>
-            </div>
-
-            <!-- Google Verified Badge -->
-            <div class="google-verified">
-                <div class="verified-content">
-                    <div class="verified-icon">
-                        <i class="fab fa-google"></i>
-                    </div>
-                    <div class="verified-text">
-                        <h3>Google Onaylı İşletme</h3>
-                        <p>Tüm yorumlar Google'da gerçek danışanlar tarafından bırakılmıştır</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Testimonials Grid -->
+            
             <div class="testimonials-grid">
-                <!-- Yorum 1: Büşra Üz -->
+                <!-- Yorum 1 -->
                 <div class="testimonial-card">
-                    <div class="rating">
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
+                    <div class="client-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
-                    <div class="testimonial-content">
-                        <p>"Tuğba hanımcığım o kadar tatlı güler yüzlü ki çok seviyorum. Çok güzel başarılara imza attık çok teşekkür ediyorum kendisine 😊️"</p>
+                    <div class="testimonial-text">
+                        "Tuğba hanımcığım o kadar tatlı güler yüzlü ki çok seviyorum. Çok güzel başarılara imza attık çok teşekkür ediyorum kendisine 😊️"
                     </div>
                     <div class="client-info">
-                        <div class="client-avatar">
+                        <div class="client-img">
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="client-details">
-                            <div class="client-name">Büşra Üz</div>
-                            <div class="client-meta">
-                                <div class="client-date">
-                                    <i class="far fa-calendar"></i> 1 ay önce
-                                </div>
-                                <div class="client-source">
-                                    <i class="fab fa-google"></i> Google
-                                </div>
-                            </div>
+                            <h4>Büşra Üz</h4>
+                            <p>Google Yorumları</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Yorum 2: Elanur Taşkıran -->
+                
+                <!-- Yorum 2 -->
                 <div class="testimonial-card">
-                    <div class="rating">
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
+                    <div class="client-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
-                    <div class="testimonial-content">
-                        <p>"Tuğba Hanımla 2 ay önce tanıştık, 2 ayda 10 kilo verdim çok kibar ve güler yüzlü biri. Emekleri için teşekkür ederim."</p>
+                    <div class="testimonial-text">
+                        "Tuğba Hanımla 2 ay önce tanıştık, 2 ayda 10 kilo verdim çok kibar ve güler yüzlü biri. Emekleri için teşekkür ederim."
                     </div>
                     <div class="client-info">
-                        <div class="client-avatar">
+                        <div class="client-img">
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="client-details">
-                            <div class="client-name">Elanur Taşkıran</div>
-                            <div class="client-meta">
-                                <div class="client-date">
-                                    <i class="far fa-calendar"></i> 1 ay önce
-                                </div>
-                                <div class="client-source">
-                                    <i class="fab fa-google"></i> Google
-                                </div>
-                            </div>
+                            <h4>Elanur Taşkıran</h4>
+                            <p>Google Yorumları</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Yorum 3: Gamze Aras -->
+                
+                <!-- Yorum 3 -->
                 <div class="testimonial-card">
-                    <div class="rating">
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
+                    <div class="client-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
-                    <div class="testimonial-content">
-                        <p>"Diyetisyenim Tuğba Hanım sadece beslenme alışkanlıklarımı değiştirmemde yardımcı olmakla kalmadı, aynı zamanda sağlığımı da büyük ölçüde iyileştirdi."</p>
+                    <div class="testimonial-text">
+                        "Diyetisyenim Tuğba Hanım sadece beslenme alışkanlıklarımı değiştirmemde yardımcı olmakla kalmadı, aynı zamanda sağlığımı da büyük ölçüde iyileştirdi."
                     </div>
                     <div class="client-info">
-                        <div class="client-avatar">
+                        <div class="client-img">
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="client-details">
-                            <div class="client-name">Gamze Aras</div>
-                            <div class="client-meta">
-                                <div class="client-date">
-                                    <i class="far fa-calendar"></i> 1 ay önce
-                                </div>
-                                <div class="client-source">
-                                    <i class="fab fa-google"></i> Google
-                                </div>
-                            </div>
+                            <h4>Gamze Aras</h4>
+                            <p>Google Yorumları</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Yorum 4: Aliye Tekin -->
+                
+                <!-- Yorum 4 -->
                 <div class="testimonial-card">
-                    <div class="rating">
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
+                    <div class="client-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
-                    <div class="testimonial-content">
-                        <p>"Sevgili Diyetisyenim Tuğba Hanım ile güzel bir süreç geçirdik. Aç kalmadan leziz tarifleriyle sürdürülebilir bir beslenme şekliyle keyif alarak kilo verdim."</p>
+                    <div class="testimonial-text">
+                        "Tuğba Hanım'la yaptığımız çalışma sayesinde sadece kilo vermedim, aynı zamanda yemekle olan ilişkim de değişti. Artık daha sağlıklı ve bilinçli besleniyorum."
                     </div>
                     <div class="client-info">
-                        <div class="client-avatar">
+                        <div class="client-img">
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="client-details">
-                            <div class="client-name">Aliye Tekin</div>
-                            <div class="client-meta">
-                                <div class="client-date">
-                                    <i class="far fa-calendar"></i> 1 ay önce
-                                </div>
-                                <div class="client-source">
-                                    <i class="fab fa-google"></i> Google
-                                </div>
-                            </div>
+                            <h4>Ayşe Yılmaz</h4>
+                            <p>Online Danışan</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Yorum 5: Sıla Sarttaş -->
+                
+                <!-- Yorum 5 -->
                 <div class="testimonial-card">
-                    <div class="rating">
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
+                    <div class="client-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
-                    <div class="testimonial-content">
-                        <p>"Tuğba hanımın 3 ayda hayatıma çok güzel etkisi oldu, hem daha sağlıklı hem de daha güzel hissediyorum sayesinde. Samimiyeti ve naifliğiyle her anımda yanımdaydı çok teşekkür ederim."</p>
+                    <div class="testimonial-text">
+                        "İnsülin direncim vardı ve Tuğba Hanım'ın hazırladığı program sayesinde hem kilo verdim hem de insülin değerlerim normale döndü. Kendisine minnettarım."
                     </div>
                     <div class="client-info">
-                        <div class="client-avatar">
+                        <div class="client-img">
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="client-details">
-                            <div class="client-name">Sıla Sarttaş</div>
-                            <div class="client-meta">
-                                <div class="client-date">
-                                    <i class="far fa-calendar"></i> 19 Ara 2024
-                                </div>
-                                <div class="client-source">
-                                    <i class="fab fa-google"></i> Google
-                                </div>
-                            </div>
+                            <h4>Mehmet Can</h4>
+                            <p>İnsülin Direnci Danışanı</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Yorum 6: İrem Nisa Çiçek -->
+                
+                <!-- Yorum 6 -->
                 <div class="testimonial-card">
-                    <div class="rating">
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
+                    <div class="client-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
-                    <div class="testimonial-content">
-                        <p>"Tuğba hanımla yaklaşık 3 aydır birlikte beslenme planı yapıyoruz. Bu süreçte vücudumun ihtiyacına göre dengeli, pratik ve lezzetli önerilerle hayatımı kolaylaştırdı. Herkese tavsiye ederim!"</p>
-                        <a href="#" class="read-more">Yorumun tamamını göster <i class="fas fa-chevron-right"></i></a>
+                    <div class="testimonial-text">
+                        "Online diyet programı ile çalıştık ve sonuçlar harika! Tuğba Hanım her zaman ulaşılabilir ve destekleyici. 3 ayda 12 kilo verdim."
                     </div>
                     <div class="client-info">
-                        <div class="client-avatar">
+                        <div class="client-img">
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="client-details">
-                            <div class="client-name">İrem Nisa Çiçek</div>
-                            <div class="client-meta">
-                                <div class="client-date">
-                                    <i class="far fa-calendar"></i> 15 Eki 2024
-                                </div>
-                                <div class="client-source">
-                                    <i class="fab fa-google"></i> Google
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Yorum 7: Mine Elvan Hoşgör -->
-                <div class="testimonial-card">
-                    <div class="rating">
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                    </div>
-                    <div class="testimonial-content">
-                        <p>"Tuğba hanım çok güler yüzlü samimi bir insan. Hiç kilo vermezken vücudum 2 ayda 9 kilo verdim. Kendisinden ve listelerinden çok memnunum."</p>
-                    </div>
-                    <div class="client-info">
-                        <div class="client-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="client-details">
-                            <div class="client-name">Mine Elvan Hoşgör</div>
-                            <div class="client-meta">
-                                <div class="client-date">
-                                    <i class="far fa-calendar"></i> 8 Eki 2024
-                                </div>
-                                <div class="client-source">
-                                    <i class="fab fa-google"></i> Google
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Yorum 8: Deniz Kaya -->
-                <div class="testimonial-card">
-                    <div class="rating">
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                    </div>
-                    <div class="testimonial-content">
-                        <p>"PCOS teşhisim vardı ve kilo vermekte çok zorlanıyordum. Tuğba Hanım'ın özel programıyla 3 ayda 9 kilo verdim ve hormon değerlerim normale döndü. Çok minnettarım!"</p>
-                    </div>
-                    <div class="client-info">
-                        <div class="client-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="client-details">
-                            <div class="client-name">Deniz Kaya</div>
-                            <div class="client-meta">
-                                <div class="client-date">
-                                    <i class="far fa-calendar"></i> 2 ay önce
-                                </div>
-                                <div class="client-source">
-                                    <i class="fab fa-instagram"></i> Instagram
-                                </div>
-                            </div>
+                            <h4>Zeynep Kaya</h4>
+                            <p>Online Diyet Danışanı</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Success Stories -->
-            <div class="success-stories">
-                <h3 class="stories-title">Başarı Hikayeleri</h3>
-                <div class="stories-grid">
-                    <!-- Story 1: Eda Hanım -->
-                    <div class="story-card">
-                        <div class="story-header">
-                            <div class="story-client">Eda Hanım</div>
-                            <div class="story-duration">15 Haftalık Süreç</div>
-                        </div>
+    <!-- Success Stories -->
+    <section class="success-stories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Başarı Hikayeleri</h2>
+            </div>
+            
+            <div class="stories-grid">
+                <!-- Hikaye 1 -->
+                <div class="story-card">
+                    <div class="story-header">
+                        <h3>Eda Hanım'ın Hikayesi</h3>
+                        <p>15 Haftada Dönüşüm</p>
+                    </div>
+                    <div class="story-content">
+                        <p>Eda ablayla -11 kg verdik bunun -10 kg yağdan gitti 😊</p>
+                        
                         <div class="story-metrics">
-                            <div class="metric">
-                                <span class="metric-value">-11 kg</span>
-                                <span class="metric-label">Toplam Kilo Kaybı</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">-10 kg</span>
-                                <span class="metric-label">Yağ Kaybı</span>
-                            </div>
-                            <div class="metric">
+                            <div class="metric-item">
                                 <span class="metric-value">55 → 43</span>
                                 <span class="metric-label">Metabolizma Yaşı</span>
                             </div>
-                            <div class="metric">
+                            <div class="metric-item">
+                                <span class="metric-value">40 paket</span>
+                                <span class="metric-label">Margarin Attık</span>
+                            </div>
+                            <div class="metric-item">
                                 <span class="metric-value">44 → 95</span>
                                 <span class="metric-label">Fitlik Puanı</span>
                             </div>
+                            <div class="metric-item">
+                                <span class="metric-value">15 Hafta</span>
+                                <span class="metric-label">Süreç</span>
+                            </div>
                         </div>
+                        
+                        <p>"Tuğba Hanım sayesinde sadece kilo vermedim, hayat tarzımı değiştirdim. Artık daha enerjik ve sağlıklı hissediyorum."</p>
                     </div>
-
-                    <!-- Story 2: Ayşe Hanım -->
-                    <div class="story-card">
-                        <div class="story-header">
-                            <div class="story-client">Ayşe Hanım</div>
-                            <div class="story-duration">6 Aylık Süreç</div>
-                        </div>
-                        <div class="story-metrics">
-                            <div class="metric">
-                                <span class="metric-value">-15 kg</span>
-                                <span class="metric-label">Toplam Kilo Kaybı</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">-13 kg</span>
-                                <span class="metric-label">Yağ Kaybı</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">%35 → %24</span>
-                                <span class="metric-label">Vücut Yağı</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">45 paket</span>
-                                <span class="metric-label">Margarin Attık</span>
-                            </div>
-                        </div>
+                </div>
+                
+                <!-- Hikaye 2 -->
+                <div class="story-card">
+                    <div class="story-header">
+                        <h3>Ahmet Bey'in Hikayesi</h3>
+                        <p>Tip 2 Diyabet Yönetimi</p>
                     </div>
-
-                    <!-- Story 3: Mehmet Bey -->
-                    <div class="story-card">
-                        <div class="story-header">
-                            <div class="story-client">Mehmet Bey</div>
-                            <div class="story-duration">4 Aylık Süreç</div>
-                        </div>
+                    <div class="story-content">
+                        <p>6 aylık süreçte hem kilo verdi hem de kan şekeri değerleri normale döndü.</p>
+                        
                         <div class="story-metrics">
-                            <div class="metric">
-                                <span class="metric-value">-12 kg</span>
-                                <span class="metric-label">Toplam Kilo Kaybı</span>
+                            <div class="metric-item">
+                                <span class="metric-value">-18 kg</span>
+                                <span class="metric-label">Kilo Kaybı</span>
                             </div>
-                            <div class="metric">
-                                <span class="metric-value">102 → 85</span>
-                                <span class="metric-label">Bel Çevresi (cm)</span>
+                            <div class="metric-item">
+                                <span class="metric-value">180 → 110</span>
+                                <span class="metric-label">Açlık Şekeri</span>
                             </div>
-                            <div class="metric">
-                                <span class="metric-value">%32 → %22</span>
-                                <span class="metric-label">Vücut Yağı</span>
+                            <div class="metric-item">
+                                <span class="metric-value">%9 → %6</span>
+                                <span class="metric-label">HbA1c</span>
                             </div>
-                            <div class="metric">
-                                <span class="metric-value">7 → 4</span>
-                                <span class="metric-label">Pantolon Bedeni</span>
+                            <div class="metric-item">
+                                <span class="metric-value">6 Ay</span>
+                                <span class="metric-label">Süreç</span>
                             </div>
                         </div>
+                        
+                        <p>"Tuğba Hanım'ın diyabete özel beslenme programı sayesinde ilaç dozlarım azaldı ve kendimi çok daha iyi hissediyorum."</p>
+                    </div>
+                </div>
+                
+                <!-- Hikaye 3 -->
+                <div class="story-card">
+                    <div class="story-header">
+                        <h3>Fatma Hanım'ın Hikayesi</h3>
+                        <p>PCOS ile Mücadele</p>
+                    </div>
+                    <div class="story-content">
+                        <p>Polikistik over sendromu ile mücadelede beslenmenin gücü.</p>
+                        
+                        <div class="story-metrics">
+                            <div class="metric-item">
+                                <span class="metric-value">-14 kg</span>
+                                <span class="metric-label">Kilo Kaybı</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">Düzenli</span>
+                                <span class="metric-label">Adet Döngüsü</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">%60</span>
+                                <span class="metric-label">Semptom Azalması</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">4 Ay</span>
+                                <span class="metric-label">Süreç</span>
+                            </div>
+                        </div>
+                        
+                        <p>"PCOS semptomlarım Tuğba Hanım'ın hazırladığı anti-enflamatuar diyet sayesinde büyük ölçüde azaldı. Kendisine minnettarım."</p>
+                    </div>
+                </div>
+                
+                <!-- Hikaye 4 -->
+                <div class="story-card">
+                    <div class="story-header">
+                        <h3>Can Bey'in Hikayesi</h3>
+                        <p>Sporcu Beslenmesi</p>
+                    </div>
+                    <div class="story-content">
+                        <p>Performans artışı ve kas kütlesi kazanımı için beslenme programı.</p>
+                        
+                        <div class="story-metrics">
+                            <div class="metric-item">
+                                <span class="metric-value">+5 kg</span>
+                                <span class="metric-label">Kas Kütlesi</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">%15</span>
+                                <span class="metric-label">Performans Artışı</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">%30</span>
+                                <span class="metric-label">Toparlanma Hızı</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">3 Ay</span>
+                                <span class="metric-label">Süreç</span>
+                            </div>
+                        </div>
+                        
+                        <p>"Tuğba Hanım'ın hazırladığı sporcu beslenme programı ile antrenman performansım arttı ve kas kütlem istediğim şekilde gelişti."</p>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- CTA Section -->
-            <div class="cta-section">
-                <h3 class="cta-title">Siz de Bu Başarı Hikayelerinden Birini Yazın!</h3>
-                <p class="cta-subtitle">86 danışanımız gibi siz de sağlıklı kilo verip hayatınızı değiştirebilirsiniz. Google'da 5 yıldız bırakan yüzlerce mutlu danışanımıza katılın!</p>
-                
-                <div class="btn-group">
-                    <a href="tel:05070361859" class="btn btn-primary">
-                        <i class="fas fa-phone"></i> Hemen Ara
-                    </a>
-                    <a href="https://wa.me/905070361859" class="btn whatsapp-btn" target="_blank">
-                        <i class="fab fa-whatsapp"></i> WhatsApp'tan Yaz
-                    </a>
-                    <a href="iletisim.html" class="btn btn-secondary">
-                        <i class="fas fa-calendar-check"></i> Randevu Al
-                    </a>
+    <!-- Video Testimonials -->
+    <section class="video-testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Video Yorumları</h2>
+            </div>
+            
+            <div class="videos-grid">
+                <div class="video-item">
+                    <div class="video-container">
+                        <!-- Video 1 - YouTube embed kodu buraya gelecek -->
+                        <div style="display: flex; align-items: center; justify-content: center; height: 100%; background-color: #f0f0f0; color: var(--gray);">
+                            <i class="fas fa-play-circle" style="font-size: 3rem; margin-right: 10px;"></i>
+                            <div>Video Yorumu 1</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Danışanımızın Deneyimi</h4>
+                        <p>Online diyet sürecindeki deneyimlerini paylaşıyor.</p>
+                    </div>
                 </div>
                 
-                <div class="phone-number">
-                    <i class="fas fa-info-circle"></i> Ücretsiz ön görüşme için: 
-                    <strong>0507 036 18 59</strong>
+                <div class="video-item">
+                    <div class="video-container">
+                        <!-- Video 2 - YouTube embed kodu buraya gelecek -->
+                        <div style="display: flex; align-items: center; justify-content: center; height: 100%; background-color: #f0f0f0; color: var(--gray);">
+                            <i class="fas fa-play-circle" style="font-size: 3rem; margin-right: 10px;"></i>
+                            <div>Video Yorumu 2</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Başarı Hikayesi</h4>
+                        <p>Kilo verme sürecindeki deneyimlerini anlatıyor.</p>
+                    </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
+    <!-- Rating Summary -->
+    <section class="rating-summary">
+        <div class="container">
+            <div class="rating-score">4.9/5</div>
+            <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="total-reviews">150+ Danışan Yorumu</div>
+            
+            <div style="margin-top: 30px;">
+                <a href="iletisim" class="btn" style="background-color: white; color: var(--primary);">Siz de Deneyimleyin</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Dyt. Tuğba Şeker Ağaç</h3>
+                    <p>Sağlıklı beslenme, kaliteli yaşam felsefesiyle danışanlarına özel beslenme programları hazırlayan uzman diyetisyen.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/dyt.tugbasekeragac/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@dyt.tugbaseker" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tugbasekeragac.com/ana-sayfa" target="_blank"><i class="fas fa-globe"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Hızlı Bağlantılar</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 10px;"><a href="index" style="color: white; text-decoration: none;">Ana Sayfa</a></li>
+                        <li style="margin-bottom: 10px;"><a href="hakkimizda" style="color: white; text-decoration: none;">Hakkımda</a></li>
+                        <li style="margin-bottom: 10px;"><a href="hizmetler" style="color: white; text-decoration: none;">Hizmetler</a></li>
+                        <li style="margin-bottom: 10px;"><a href="tarifler" style="color: white; text-decoration: none;">Tarifler</a></li>
+                        <li style="margin-bottom: 10px;"><a href="iletisim" style="color: white; text-decoration: none;">İletişim</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>İletişim Bilgileri</h3>
+                    <p><i class="fas fa-phone" style="margin-right: 10px;"></i> 0507 036 18 59</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> info@tugbasekeragac.com</p>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Seyhan/Adana</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Diyetisyen Tuğba Şeker Ağaç. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
     <script>
-        // Mobile Menu JavaScript
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const mobileNav = document.getElementById('mobileNav');
@@ -1235,84 +1071,24 @@
                 });
             });
             
-            // Animasyon için JavaScript
-            const testimonialCards = document.querySelectorAll('.testimonial-card');
-            const storyCards = document.querySelectorAll('.story-card');
-            
-            // Testimonial kart hover
-            testimonialCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-12px)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                });
-            });
-            
-            // Story kart hover
-            storyCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-8px)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                });
-            });
-            
-            // "Devamını oku" butonları
-            const readMoreButtons = document.querySelectorAll('.read-more');
-            readMoreButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
                     e.preventDefault();
-                    const content = this.previousElementSibling;
-                    content.style.maxHeight = 'none';
-                    content.style.overflow = 'visible';
-                    this.style.display = 'none';
-                });
-            });
-            
-            // Buton tıklama animasyonları
-            const buttons = document.querySelectorAll('.btn');
-            buttons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    // Eğer # link ise sayfayı yenileme
-                    if (this.getAttribute('href') === '#') {
-                        e.preventDefault();
-                    }
                     
-                    // Tıklama efekti
-                    this.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        this.style.transform = 'scale(1)';
-                    }, 200);
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             });
-            
-            // Yıldız animasyonu
-            const stars = document.querySelectorAll('.star-large');
-            stars.forEach((star, index) => {
-                star.style.animation = `pulse 2s ${index * 0.2}s infinite`;
-            });
-            
-            // CSS'e pulse animasyonu ekle
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes pulse {
-                    0% { transform: scale(1); }
-                    50% { transform: scale(1.1); }
-                    100% { transform: scale(1); }
-                }
-                
-                .testimonial-card {
-                    animation: fadeInUp 0.6s ease forwards;
-                    opacity: 0;
-                }
-            `;
-            document.head.appendChild(style);
         });
     </script>
 </body>
-
 </html>
